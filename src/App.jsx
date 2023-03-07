@@ -38,6 +38,8 @@ function App() {
           flexDirection: "column",
           justifyContent: "center",
           alignItems: "center",
+          borderRadius: "1rem",
+          padding: "15px",
         }}
       >
         <div
@@ -47,6 +49,21 @@ function App() {
             width: "300px",
           }}
         >
+          {error && (
+            <div
+              style={{
+                backgroundColor: "red",
+                margin: "7px",
+                padding: "7px",
+                borderRadius: "1rem",
+              }}
+            >
+              <p style={{ fontWeight: "bold" }}>
+                Porfavor ingresa la informacion correcta
+              </p>
+            </div>
+          )}
+
           <label>Nombre:</label>
           <input
             placeholder="Ingresa tu nombre"
@@ -66,7 +83,6 @@ function App() {
           </button>
         </div>
       </form>
-      {error && <p>Porfavor ingresa la informacion correcta</p>}
       {enviado && <Card nombre={nombre} pelicula={pelicula} />}
     </div>
   );
